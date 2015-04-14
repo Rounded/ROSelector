@@ -1,0 +1,14 @@
+PODS:
+  - ROSelector (0.1.0)
+
+DEPENDENCIES:
+  - ROSelector (from `../`)
+
+EXTERNAL SOURCES:
+  ROSelector:
+    :path: ../
+
+SPEC CHECKSUMS:
+  ROSelector: 6a4c4baa89d8e8d275233bc675cee78b32db5ce6
+
+COCOAPODS: 0.36.3

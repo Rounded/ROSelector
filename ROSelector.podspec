@@ -9,19 +9,16 @@
 
 Pod::Spec.new do |s|
   s.name             = "ROSelector"
-  s.version          = "0.1.0"
-  s.summary          = "A short description of ROSelector."
+  s.version          = "0.0.1"
+  s.summary          = "Highly customizable dropdown view."
   s.description      = <<-DESC
-                       An optional longer description of ROSelector
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
+                       A drag and drop, customizable, dropdown view.
                        DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/ROSelector"
+  s.homepage         = "https://github.com/Rounded/ROSelector"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Heather Snepenger" => "hs@roundedco.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/ROSelector.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/Rounded/ROSelector.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform     = :ios, '7.0'
@@ -34,5 +31,5 @@ Pod::Spec.new do |s|
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'PureLayout'
 end
