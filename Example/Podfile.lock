@@ -1,7 +1,11 @@
 PODS:
-  - ROSelector (0.1.0)
+  - PureLayout (2.0.5)
+  - Reveal-iOS-SDK (1.5.1)
+  - ROSelector (0.0.1):
+    - PureLayout
 
 DEPENDENCIES:
+  - Reveal-iOS-SDK
   - ROSelector (from `../`)
 
 EXTERNAL SOURCES:
@@ -9,6 +13,8 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  ROSelector: 6a4c4baa89d8e8d275233bc675cee78b32db5ce6
+  PureLayout: a0fe75f1cf485801e7e00b723b8a3c32dca558e2
+  Reveal-iOS-SDK: c9c55cad2729c85f6ced415f1b21857c9a2d8ef9
+  ROSelector: fbac21ad494279d7eb8f4e56803fa96b16eb9eca
 
 COCOAPODS: 0.36.3

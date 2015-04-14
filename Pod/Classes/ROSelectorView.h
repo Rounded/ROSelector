@@ -8,8 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ROSelectorDelegate <NSObject>
+
+- (void)cancelButtonPressed;
+- (void)confirmButtonPressed;
+- (void)itemSelectedWithValue:(NSString *)value;
+
+@end
+
 @interface ROSelectorView : UIView
 
-+ (instancetype)newWithDisplayValues:(NSArray *)values andButtonTitles:(NSArray *)titles;
++ (instancetype)newWithDisplayValues:(NSArray *)values andCancelButton:(NSString *) cancelTitle andConfirmButton:(NSString *)confirmTitle;
+
+@property (strong, nonatomic) id<ROSelectorDelegate> delegate;
+@property (strong, nonatomic) UIFont *font;
+@property (strong, nonatomic) UIColor *separatorColor;
 
 @end

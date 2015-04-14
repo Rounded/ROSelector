@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1978DDDABC4C9B768992CE42 /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92BACD0A70A9045167FA17CD /* libPods-Tests.a */; };
+		3FCD87E0BFC0317F38458672 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 824FB08C35413B7B3C3125EF /* libPods.a */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -60,6 +61,7 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		7BC8B13C39766993D5A00D79 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		824FB08C35413B7B3C3125EF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C3070B195BE012CF8377EB1 /* libPods-ROSelector.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ROSelector.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92BACD0A70A9045167FA17CD /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97CC7462992216C68E1F70DC /* Pods-ROSelector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ROSelector.release.xcconfig"; path = "Pods/Target Support Files/Pods-ROSelector/Pods-ROSelector.release.xcconfig"; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
 				C0687056EFE3A4D4DAFB0994 /* libPods-ROSelector.a in Frameworks */,
+				3FCD87E0BFC0317F38458672 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +139,7 @@
 				6003F5AF195388D20070C39A /* XCTest.framework */,
 				8C3070B195BE012CF8377EB1 /* libPods-ROSelector.a */,
 				92BACD0A70A9045167FA17CD /* libPods-Tests.a */,
+				824FB08C35413B7B3C3125EF /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

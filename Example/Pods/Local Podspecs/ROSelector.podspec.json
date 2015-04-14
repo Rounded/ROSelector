@@ -1,16 +1,16 @@
 {
   "name": "ROSelector",
-  "version": "0.1.0",
-  "summary": "A short description of ROSelector.",
-  "description": "                       An optional longer description of ROSelector\n\n                       * Markdown format.\n                       * Don't worry about the indent, we strip it!\n",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/ROSelector",
+  "version": "0.0.1",
+  "summary": "Highly customizable dropdown view.",
+  "description": "                       A drag and drop, customizable, dropdown view.\n",
+  "homepage": "https://github.com/Rounded/ROSelector",
   "license": "MIT",
   "authors": {
     "Heather Snepenger": "hs@roundedco.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/ROSelector.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/Rounded/ROSelector.git",
+    "tag": "0.0.1"
   },
   "platforms": {
     "ios": "7.0"
@@ -20,6 +20,11 @@
   "resource_bundles": {
     "ROSelector": [
       "Pod/Assets/*.png"
+    ]
+  },
+  "dependencies": {
+    "PureLayout": [
+
     ]
   }
 }

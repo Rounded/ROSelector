@@ -6,6 +6,6 @@ end
 
 target 'Tests', :exclusive => true do
   pod "ROSelector", :path => "../"
-
   
+
 end
