@@ -13,7 +13,6 @@
 
 @interface ROSelectorView() <UITableViewDelegate, UITableViewDataSource>
 
-@property (strong, nonatomic) NSArray *values;
 @property (strong, nonatomic) NSString *cancelTitle;
 @property (strong, nonatomic) NSString *confirmTitle;
 

@@ -12,7 +12,7 @@
 
 - (void)cancelButtonPressed;
 - (void)confirmButtonPressed;
-- (void)itemSelectedWithValue:(NSString *)value;
+- (void)itemSelectedWithValue:(id)value;
 
 @end
 
@@ -23,5 +23,6 @@
 @property (strong, nonatomic) id<ROSelectorDelegate> delegate;
 @property (strong, nonatomic) UIFont *font;
 @property (strong, nonatomic) UIColor *separatorColor;
+@property (strong, nonatomic) NSArray *values;
 
 @end
