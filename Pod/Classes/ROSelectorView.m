@@ -69,7 +69,8 @@
 
 - (void) layoutSubviews {
     
-    [self.tableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(10, 0, 0, 0) excludingEdge:ALEdgeBottom];
+    [self.tableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(40, 0, 0, 0) excludingEdge:ALEdgeBottom];
+
     
     [self.cancelButton autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.tableView];
     [self.cancelButton autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:0];
@@ -105,13 +106,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ROSelectorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    if ([self.values[indexPath.row] isKindOfClass:[NSString class]]) {
-        cell.titleLabel.text = [self.values[indexPath.row] description];
-        if (self.font) {
-            cell.titleLabel.font = self.font;
-        }
-        NSLog(@"%@", [self.values[indexPath.row] description]);
+    cell.titleLabel.text = [self.values[indexPath.row] description];
+    if (self.font) {
+        cell.titleLabel.font = self.font;
     }
+    NSLog(@"%@", [self.values[indexPath.row] description]);
+
     return cell;
 }
 
