@@ -107,11 +107,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ROSelectorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     if ([self.values[indexPath.row] isKindOfClass:[NSString class]]) {
-        cell.titleLabel.text = self.values[indexPath.row];
+        cell.titleLabel.text = [self.values[indexPath.row] description];
         if (self.font) {
             cell.titleLabel.font = self.font;
         }
-        NSLog(@"%@", self.values[indexPath.row]);
+        NSLog(@"%@", [self.values[indexPath.row] description]);
     }
     return cell;
 }
