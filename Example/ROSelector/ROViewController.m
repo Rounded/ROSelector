@@ -23,9 +23,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    self.view.backgroundColor = [UIColor grayColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     
-    self.selectorView = [ROSelectorView newWithDisplayValues:@[@"One", @"Two", @"Three", @"Four", @"Five"] andCancelButton:@"Cancel" andConfirmButton:@"Ok"];
+    self.selectorView = [ROSelectorView newWithDisplayValues:@[@"One", @"Two", @"Three", @"Four", @"Five"] andCancelButton:@"Cancel" andConfirmButton:nil];
+    [self.selectorView setModalColor:[UIColor redColor]];
     [self.view addSubview:self.selectorView];
     
     NSDictionary *viewsDictionary = @{@"selectorView":self.selectorView};

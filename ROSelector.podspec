@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "ROSelector"
-  s.version          = "0.0.1"
+  s.version          = "0.0.2"
   s.summary          = "Highly customizable dropdown view."
   s.description      = <<-DESC
                        A drag and drop, customizable, dropdown view.

@@ -25,4 +25,6 @@
 @property (strong, nonatomic) UIColor *separatorColor;
 @property (strong, nonatomic) NSArray *values;
 
+- (void)setModalColor:(UIColor *)color;
+
 @end

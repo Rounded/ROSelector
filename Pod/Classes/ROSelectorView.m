@@ -23,6 +23,8 @@
 @property (strong, nonatomic) UIView *horizontalSeparatorView;
 @property (strong, nonatomic) UIView *verticalSeparatorView;
 
+@property (strong, nonatomic) UIView *modalView;
+
 @end
 
 @implementation ROSelectorView
@@ -58,16 +60,19 @@
 
 - (void) addAllSubviews {
     
+    [self addSubview:self.modalView];
+    [self.modalView addSubview:self.tableView];
+    [self.modalView addSubview:self.cancelButton];
+    [self.modalView addSubview:self.confirmButton];
     
-    [self addSubview:self.tableView];
-    [self addSubview:self.cancelButton];
-    [self addSubview:self.confirmButton];
-    
-    [self addSubview:self.horizontalSeparatorView];
-    [self addSubview:self.verticalSeparatorView];
+    [self.modalView addSubview:self.horizontalSeparatorView];
+    [self.modalView addSubview:self.verticalSeparatorView];
 }
 
 - (void) layoutSubviews {
+    
+    [self.modalView autoCenterInSuperview];
+    [self.modalView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(100, 50, 100, 50)];
     
     [self.tableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(40, 0, 0, 0) excludingEdge:ALEdgeBottom];
 
@@ -76,13 +81,18 @@
     [self.cancelButton autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:0];
     [self.cancelButton autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:0];
     [self.cancelButton autoSetDimension:ALDimensionHeight toSize:50];
-    [self.cancelButton autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:self withMultiplier:0.5];
     
+    if (self.confirmTitle) {
+        [self.cancelButton autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:self withMultiplier:0.5];
+
+        [self.confirmButton autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.tableView];
+        [self.confirmButton autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:0];
+        [self.confirmButton autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:0];
+        [self.confirmButton autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:self withMultiplier:0.5];
+    } else {
+        [self.cancelButton autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:self withMultiplier:1];
+    }
     
-    [self.confirmButton autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.tableView];
-    [self.confirmButton autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:0];
-    [self.confirmButton autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:0];
-    [self.confirmButton autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:self withMultiplier:0.5];
     
     [self.horizontalSeparatorView autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:5];
     [self.horizontalSeparatorView autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:5];
@@ -136,6 +146,14 @@
 }
 
 #pragma mark - Getters
+- (UIView *)modalView {
+    if (!_modalView) {
+        _modalView = [UIView newAutoLayoutView];
+        _modalView.layer.cornerRadius = 2;
+    }
+    return _modalView;
+}
+
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [UITableView newAutoLayoutView];
@@ -211,6 +229,10 @@
     _separatorColor = separatorColor;
     self.horizontalSeparatorView.backgroundColor = separatorColor;
     self.verticalSeparatorView.backgroundColor = separatorColor;
+}
+
+- (void)setModalColor:(UIColor *)color {
+    self.modalView.backgroundColor = color;
 }
 
 @end
