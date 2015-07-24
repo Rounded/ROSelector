@@ -25,6 +25,7 @@
 @property (strong, nonatomic) UIFont *font;
 @property (strong, nonatomic) UIColor *separatorColor;
 @property (strong, nonatomic) NSArray *values;
+@property (strong, nonatomic) UILabel *titleLabel;
 
 - (void)setModalColor:(UIColor *)color;
 - (void)setTableViewColor:(UIColor *)color;

@@ -19,7 +19,6 @@
 @property (strong, nonatomic) NSString *title;
 
 @property (strong, nonatomic) UITableView *tableView;
-@property (strong, nonatomic) UILabel *titleLabel;
 @property (strong, nonatomic) UIButton *cancelButton;
 @property (strong, nonatomic) UIButton *confirmButton;
 
