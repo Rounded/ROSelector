@@ -27,6 +27,6 @@
 @property (strong, nonatomic) NSArray *values;
 
 - (void)setModalColor:(UIColor *)color;
-- (void)setTableViewColor:(UIColor *)color
+- (void)setTableViewColor:(UIColor *)color;
 
 @end
