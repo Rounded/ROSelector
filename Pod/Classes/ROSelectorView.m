@@ -13,10 +13,13 @@
 
 @interface ROSelectorView() <UITableViewDelegate, UITableViewDataSource>
 
+
 @property (strong, nonatomic) NSString *cancelTitle;
 @property (strong, nonatomic) NSString *confirmTitle;
+@property (strong, nonatomic) NSString *title;
 
 @property (strong, nonatomic) UITableView *tableView;
+@property (strong, nonatomic) UILabel *titleLabel;
 @property (strong, nonatomic) UIButton *cancelButton;
 @property (strong, nonatomic) UIButton *confirmButton;
 
@@ -32,6 +35,15 @@
 + (instancetype)newWithDisplayValues:(NSArray *)values andCancelButton:(NSString *) cancelTitle andConfirmButton:(NSString *)confirmTitle {
     ROSelectorView *selectorView = [ROSelectorView newAutoLayoutView];
     selectorView.values = values;
+    selectorView.cancelTitle = cancelTitle;
+    selectorView.confirmTitle = confirmTitle;
+    return selectorView;
+}
+
++ (instancetype)newWithDisplayValues:(NSArray *)values andTitle:(NSString *)title andCancelButton:(NSString *) cancelTitle andConfirmButton:(NSString *)confirmTitle {
+    ROSelectorView *selectorView = [ROSelectorView newAutoLayoutView];
+    selectorView.values = values;
+    selectorView.title = title;
     selectorView.cancelTitle = cancelTitle;
     selectorView.confirmTitle = confirmTitle;
     return selectorView;
@@ -58,6 +70,7 @@
 - (void) addAllSubviews {
     
     [self addSubview:self.modalView];
+    [self.modalView addSubview:self.titleLabel];
     [self.modalView addSubview:self.tableView];
     [self.modalView addSubview:self.cancelButton];
     [self.modalView addSubview:self.confirmButton];
@@ -72,7 +85,10 @@
     [self.modalView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(100, 50, 100, 50)];
     
     [self.tableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(40, 0, 0, 0) excludingEdge:ALEdgeBottom];
-
+    
+    [self.titleLabel autoPinEdge:ALEdgeBottom toEdge:ALEdgeTop ofView:self.tableView withOffset:-10];
+    [self.titleLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+    [self.titleLabel autoPinEdgeToSuperviewEdge:ALEdgeRight];
     
     [self.cancelButton autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.tableView];
     [self.cancelButton autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:0];
@@ -146,9 +162,6 @@
 - (UIView *)modalView {
     if (!_modalView) {
         _modalView = [UIView newAutoLayoutView];
-        _modalView.layer.borderColor = [UIColor whiteColor].CGColor;
-        _modalView.layer.borderWidth = 1;
-        _modalView.layer.cornerRadius = 2;
     }
     return _modalView;
 }
@@ -161,8 +174,20 @@
         _tableView.backgroundColor = [UIColor clearColor];
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [_tableView registerClass:[ROSelectorTableViewCell class] forCellReuseIdentifier:@"cell"];
+        _tableView.layer.borderColor = [UIColor whiteColor].CGColor;
+        _tableView.layer.borderWidth = 1;
+        _tableView.layer.cornerRadius = 2;
     }
     return _tableView;
+}
+
+- (UILabel *)titleLabel {
+    if (!_titleLabel) {
+        _titleLabel = [UILabel newAutoLayoutView];
+        _titleLabel.text = self.title;
+        _titleLabel.textColor = [UIColor whiteColor];
+    }
+    return _titleLabel;
 }
 
 - (UIButton *)cancelButton {
@@ -217,11 +242,17 @@
     [_confirmButton setTitle:self.confirmTitle forState:UIControlStateNormal];
 }
 
+- (void)setTitle:(NSString *)title {
+    _title = title;
+    self.titleLabel.text = title;
+}
+
 - (void)setFont:(UIFont *)font {
     _font = font;
     [self.tableView reloadData];
     self.confirmButton.titleLabel.font = font;
     self.cancelButton.titleLabel.font = font;
+    self.titleLabel.font = font;
 }
 
 - (void)setSeparatorColor:(UIColor *)separatorColor {

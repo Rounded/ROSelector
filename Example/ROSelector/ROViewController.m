@@ -25,7 +25,7 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.selectorView = [ROSelectorView newWithDisplayValues:@[@"One", @"Two", @"Three", @"Four", @"Five"] andCancelButton:@"Cancel" andConfirmButton:nil];
+    self.selectorView = [ROSelectorView newWithDisplayValues:@[@"One", @"Two", @"Three", @"Four", @"Five"] andTitle:@"Title" andCancelButton:@"Cancel" andConfirmButton:nil];
     [self.selectorView setModalColor:[UIColor redColor]];
     [self.view addSubview:self.selectorView];
     

@@ -19,6 +19,7 @@
 @interface ROSelectorView : UIView
 
 + (instancetype)newWithDisplayValues:(NSArray *)values andCancelButton:(NSString *) cancelTitle andConfirmButton:(NSString *)confirmTitle;
++ (instancetype)newWithDisplayValues:(NSArray *)values andTitle:(NSString *)title andCancelButton:(NSString *) cancelTitle andConfirmButton:(NSString *)confirmTitle;
 
 @property (strong, nonatomic) id<ROSelectorDelegate> delegate;
 @property (strong, nonatomic) UIFont *font;
