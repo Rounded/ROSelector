@@ -89,9 +89,10 @@
     [self.titleLabel autoPinEdge:ALEdgeBottom toEdge:ALEdgeTop ofView:self.tableView withOffset:-10];
     [self.titleLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft];
     [self.titleLabel autoPinEdgeToSuperviewEdge:ALEdgeRight];
+
     
     [self.cancelButton autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.tableView];
-    [self.cancelButton autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:0];
+    [self.cancelButton autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:0];
     [self.cancelButton autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:0];
     [self.cancelButton autoSetDimension:ALDimensionHeight toSize:50];
     
@@ -103,7 +104,7 @@
         [self.confirmButton autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:0];
         [self.confirmButton autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:self withMultiplier:0.5];
     } else {
-        [self.cancelButton autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:self withMultiplier:1];
+//        [self.cancelButton autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:self withMultiplier:1];
     }
     
     
@@ -263,6 +264,10 @@
 
 - (void)setModalColor:(UIColor *)color {
     self.modalView.backgroundColor = color;
+}
+
+- (void)setTableViewColor:(UIColor *)color {
+    self.tableView.backgroundColor = color;
 }
 
 @end
