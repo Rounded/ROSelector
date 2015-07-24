@@ -81,7 +81,7 @@
 - (void) layoutSubviews {
     
     [self.modalView autoCenterInSuperview];
-    [self.modalView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(100, 50, 100, 50)];
+    [self.modalView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(75, 50, 75, 50)];
     
     [self.tableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(40, 0, 0, 0) excludingEdge:ALEdgeBottom];
     
